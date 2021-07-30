@@ -1,0 +1,4 @@
+val buttonname = findViewById(R.id.buttonname) as Button
+        buttonname.setOnClickListener {
+            val intent = Intent(this, <Activityname>::class.java)
+            startActivity(intent)
