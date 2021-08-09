@@ -1,0 +1,25 @@
+//Manifest File
+<uses-permission android:name="android.permission.INTERNET" />
+
+<application
+	android:usesCleartextTraffic="true"
+</application>
+
+
+//Code
+class /*pagename*/ : AppCompatActivity() {
+    private lateinit var textView: TextView       //You have to add this!!!
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_/*name*/)
+
+	//these too.
+        var personalKey = intent.getStringExtra("PersonalKey")
+        textView = findViewById(R.id.textView)
+        textView.text = personalKey
+        // add
+        var myWebView: WebView = findViewById(R.id.webview)
+        myWebView.webViewClient = WebViewClient()
+        myWebView.loadUrl("https://github.com/ZeroOneKim/Android_tool")
+    }
+}
